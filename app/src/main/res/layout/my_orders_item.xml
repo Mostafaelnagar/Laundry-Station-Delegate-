@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/white">
+
+    <data>
+
+        <variable
+            name="orderItemViewModel"
+            type="app.laundrydelegate.viewModels.MyOrdersItemViewModels" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp12h"
+        android:onClick="@{() -> orderItemViewModel.performClickAction(orderItemViewModel.getMyOrders())}"
+        app:cardCornerRadius="@dimen/dp8h"
+        app:cardElevation="@dimen/dp4h">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/txt_Orders_Laundry_Name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_margin="@dimen/dp8h"
+                    android:padding="4dp"
+                    android:text="إسم المغسله"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold"
+                    app:text="@{orderItemViewModel.LaundryName}" />
+
+                <TextView
+                    android:id="@+id/txt_Order_Price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="@dimen/dp16w"
+                    android:layout_marginTop="@dimen/dp8h"
+                    android:gravity="center_horizontal|center_vertical"
+
+                    android:padding="4dp"
+                    android:text="5 ريال"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold"
+                    app:text="@{orderItemViewModel.OrderTotal}" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/txt_Order_Num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_margin="@dimen/dp8h"
+                    android:padding="@dimen/dp4h"
+                    android:text="رقم الطلب"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold"
+                    app:text="@{orderItemViewModel.OrderNumber}" />
+
+                <TextView
+                    android:id="@+id/txt_Order_Date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="@dimen/dp16w"
+                    android:layout_marginTop="@dimen/dp8h"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:padding="4dp"
+                    android:text="25/12/2018"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold"
+                    app:text="@{orderItemViewModel.OrderDate}" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorAccent">
+
+                <TextView
+                    android:id="@+id/txt_Order_Chat_Request"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="@dimen/dp8w"
+                    android:layout_marginTop="@dimen/dp8h"
+                    android:onClick="@{() -> orderItemViewModel.startChat()}"
+                    android:padding="@dimen/dp4h"
+                    android:text="@string/order_chat_request"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txt_Order_Status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp16w"
+                    android:layout_marginTop="@dimen/dp8h"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:padding="@dimen/dp4h"
+                    android:text="جارى التنفيذ"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"
+                    app:text="@{orderItemViewModel.OrderStatus}" />
+            </RelativeLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

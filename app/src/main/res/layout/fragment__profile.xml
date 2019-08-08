@@ -1,0 +1,165 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="userProfileViewModel"
+            type="app.laundrydelegate.viewModels.UserProfileViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/conTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_margin="@dimen/dp8h"
+                    android:onClick="@{() -> userProfileViewModel.back()}"
+                    android:padding="@dimen/dp8h"
+                    android:src="@drawable/ic_back"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/txt_Laundry_Cat_Name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_margin="@dimen/dp8h"
+                    android:padding="@dimen/dp4h"
+                    android:text="@string/title_profile"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@android:color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </RelativeLayout>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/userProfileImgae"
+                android:layout_width="@dimen/dp80h"
+                android:layout_height="@dimen/dp80h"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:onClick="@{() -> userProfileViewModel.addImage()}"
+                android:src="@drawable/profile_holder"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/conTitle"
+                app:profileImage="@{userProfileViewModel.ProfileImage}" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/sign_up_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp32h"
+                android:layout_marginStart="@dimen/dp32h"
+                android:layout_marginTop="@dimen/dp6h"
+                android:drawablePadding="4dp"
+                android:drawableStart="@drawable/ic_profile"
+                android:gravity="start|center_vertical"
+                android:hint="@string/sign_up_username"
+                android:inputType="text"
+                android:text="@={userProfileViewModel.userName}"
+                android:textSize="@dimen/sp14"
+                app:layout_constraintTop_toBottomOf="@+id/userProfileImgae"
+                app:met_floatingLabel="highlight"
+                app:met_primaryColor="?colorPrimary" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/sign_up_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp32h"
+                android:layout_marginStart="@dimen/dp32h"
+                android:layout_marginTop="@dimen/dp6h"
+                android:drawablePadding="4dp"
+                android:drawableStart="@drawable/ic_profile"
+                android:gravity="start|center_vertical"
+                android:hint="@string/sign_up_email"
+                android:inputType="textEmailAddress"
+                android:text="@={userProfileViewModel.userEmail}"
+                android:textSize="@dimen/sp14"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sign_up_name"
+                app:met_floatingLabel="highlight"
+                app:met_primaryColor="?colorPrimary" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/delegatedLicsense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp32h"
+                android:layout_marginStart="@dimen/dp32h"
+                android:layout_marginTop="@dimen/dp6h"
+                android:drawablePadding="4dp"
+                android:drawableStart="@drawable/ic_phone"
+                android:gravity="start|center_vertical"
+                android:hint="@string/delegatedLicense"
+                android:inputType="text"
+                android:text="@={userProfileViewModel.userLicence}"
+                android:textSize="@dimen/sp14"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sign_up_email"
+                app:met_floatingLabel="highlight"
+                app:met_primaryColor="?colorPrimary" />
+
+            <TextView
+                android:id="@+id/txt_password_lost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp32h"
+                android:layout_marginTop="8dp"
+                android:gravity="start"
+                android:onClick="@{() -> userProfileViewModel.userChangePassword()}"
+                android:text="@string/profileForgetPassword"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/delegatedLicsense" />
+
+
+            <Button
+                android:id="@+id/btn_Sign_Up"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="@dimen/dp64h"
+                android:layout_marginStart="@dimen/dp64h"
+                android:layout_marginTop="@dimen/dp14h"
+                android:background="@color/colorAccent"
+                android:onClick="@{() -> userProfileViewModel.saveChanges()}"
+                android:text="@string/btn_saveCode_text"
+                android:textAllCaps="false"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/sp16"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_password_lost" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</layout>

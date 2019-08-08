@@ -1,0 +1,9 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <layer-list android:opacity="transparent">
+            <item android:width="60dp" android:gravity="end" android:start="20dp">
+                <bitmap android:gravity="end" android:src="@drawable/ic_spinner" />
+            </item>
+        </layer-list>
+    </item>
+</selector>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="authViewModel"
+            type="app.laundrydelegate.viewModels.AuthViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white">
+
+        <LinearLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/sign_In_Phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp16h"
+                android:layout_marginStart="@dimen/dp32w"
+                android:layout_marginTop="@dimen/dp16h"
+                android:drawableStart="@drawable/ic_profile"
+                android:drawablePadding="@dimen/dp4w"
+                android:hint="@string/sign_in_phone_number"
+                android:inputType="phone"
+                android:text="@={authViewModel.userPhone}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:met_floatingLabel="highlight"
+                app:met_primaryColor="?colorPrimary" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/sign_In_Password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp16h"
+                android:layout_marginStart="@dimen/dp32w"
+                android:layout_marginTop="@dimen/dp16h"
+                android:drawableStart="@drawable/ic_lock"
+                android:drawablePadding="4dp"
+                android:hint="@string/sign_in_password"
+                android:inputType="textPassword"
+                android:text="@={authViewModel.userPassword}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sign_In_Phone"
+                app:met_floatingLabel="highlight"
+                app:met_primaryColor="?colorPrimary" />
+
+            <TextView
+                android:id="@+id/txt_password_lost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp32h"
+                android:layout_marginTop="@dimen/dp8h"
+                android:gravity="start"
+                android:onClick="@{() -> authViewModel.userForgetPassword()}"
+                android:text="@string/sign_in_forget"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_Sign_In"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp8h"
+                android:layout_marginEnd="@dimen/dp32w"
+                android:layout_marginStart="@dimen/dp32w"
+                android:layout_marginTop="@dimen/dp16h"
+                android:background="@color/colorAccent"
+                android:onClick="@{() -> authViewModel.userAuth()}"
+                android:text="@string/btn_sign_in_text"
+                android:textAllCaps="false"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_password_lost" />
+        </LinearLayout>
+    </ScrollView>
+
+</layout>

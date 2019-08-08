@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="myOrderDetailViewModel"
+            type="app.laundrydelegate.viewModels.MyOrderDetailViewModel" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:clickable="true"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/relNav"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txt_Laundry_Cat_Name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginEnd="@dimen/dp8w"
+                android:layout_marginTop="@dimen/dp16h"
+                android:padding="@dimen/dp4h"
+                android:text="@string/order_detail_title"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@android:color/black"
+                  />
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginStart="@dimen/dp20w"
+                android:layout_marginTop="@dimen/dp16h"
+                android:onClick="@{() -> myOrderDetailViewModel.back()}"
+                android:padding="@dimen/dp4h"
+                android:src="@drawable/ic_back"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </RelativeLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardDelegate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relNav"
+            android:layout_margin="@dimen/dp8h"
+            app:cardBackgroundColor="@android:color/white"
+            app:cardCornerRadius="@dimen/dp8h"
+            app:cardElevation="@dimen/dp4h">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/userImage"
+                    android:layout_width="@dimen/dp50w"
+                    android:layout_height="@dimen/dp50h"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/dp8w"
+                    android:layout_marginTop="@dimen/dp8h"
+                    android:src="@drawable/profile_holder" />
+
+                <TextView
+                    android:id="@+id/txtUserName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp12h"
+                    android:layout_toLeftOf="@+id/userImage"
+                    android:padding="@dimen/dp4h"
+                    android:text="إسم المندوب"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@android:color/black"
+                     app:text="@{myOrderDetailViewModel.ClientName}" />
+
+                <TextView
+                    android:id="@+id/orderStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp12h"
+                    android:layout_marginStart="@dimen/dp4w"
+                    android:background="@color/colorAccent"
+                    android:clickable="true"
+                    android:onClick="@{() -> myOrderDetailViewModel.cancelOrder()}"
+                    android:padding="@dimen/dp4h"
+                    android:text="@string/changeOrderStatus"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@android:color/black" />
+
+                <TextView
+                    android:id="@+id/txtUserPhone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtUserName"
+                    android:layout_margin="@dimen/dp8h"
+                    android:layout_toLeftOf="@+id/userImage"
+                    android:padding="@dimen/dp4h"
+                    android:text="01090624441"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@android:color/black"
+                     app:text="@{myOrderDetailViewModel.ClientPhone}" />
+
+                <ImageView
+                    android:id="@+id/userLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/orderStatus"
+                    android:layout_marginStart="@dimen/dp15w"
+                    android:onClick="@{() -> myOrderDetailViewModel.navigateToUser()}"
+                    android:src="@drawable/ic_location_placeholder" />
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/laundrydetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cardDelegate"
+            android:layout_margin="@dimen/dp8h"
+            android:gravity="start"
+            android:padding="@dimen/dp4h"
+            android:text="@string/titleLaundryDetail"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="@android:color/black"
+             />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardLaundry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/laundrydetails"
+            app:cardCornerRadius="@dimen/dp8h">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start">
+
+                <ImageView
+                    android:id="@+id/imgLaundry"
+                    android:layout_width="@dimen/dp50w"
+                    android:layout_height="@dimen/dp50h"
+                    android:layout_alignParentStart="true"
+                    android:layout_margin="@dimen/dp8h"
+                    android:scaleType="centerCrop"
+                    app:laundryImage="@{myOrderDetailViewModel.laundryImage}" />
+
+                <TextView
+                    android:id="@+id/txtLaundryName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp4h"
+                    android:layout_toEndOf="@+id/imgLaundry"
+                    android:gravity="start|center_vertical"
+                    android:padding="@dimen/dp4h"
+                    android:text="@string/app_name"
+                    android:maxLength="30"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@android:color/black"
+                     app:text="@{myOrderDetailViewModel.LaundryName}" />
+
+                <TextView
+                    android:id="@+id/txtLaundryAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtLaundryName"
+                    android:layout_margin="@dimen/dp4h"
+                    android:layout_toEndOf="@+id/imgLaundry"
+                    android:gravity="start|center_vertical"
+                    android:padding="@dimen/dp4h"
+                    android:text="@string/app_name"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@android:color/black"
+                     app:text="@{myOrderDetailViewModel.LaundryAddress}" />
+
+                <ImageView
+                    android:id="@+id/laundryLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                     android:layout_margin="@dimen/sp8"
+                    android:onClick="@{() -> myOrderDetailViewModel.navigateToLaundry()}"
+                    android:src="@drawable/ic_location_placeholder" />
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recOrderDetail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/step_view"
+                android:layout_marginBottom="@dimen/dp4h"
+                app:myOrderDetail="@{myOrderDetailViewModel.myOrderDetail}"
+                app:myOrderDetailAdapter="@{myOrderDetailViewModel.myOrderDetailAdapter}"
+                tools:listitem="@layout/order_detail_item" />
+
+            <com.shuhart.stepview.StepView
+                android:id="@+id/step_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/relTotal"
+                android:padding="@dimen/dp16h"
+                app:sv_animationType="All"
+                app:sv_doneCircleColor="@color/overlayBackground"
+                app:sv_doneCircleRadius="@dimen/dp8h"
+                app:sv_doneStepLineColor="@color/overlayBackground"
+                app:sv_doneStepMarkColor="@color/colorPrimary"
+                app:sv_nextStepLineColor="@color/colorAccent"
+                app:sv_nextTextColor="@android:color/black"
+                app:sv_selectedCircleColor="@color/colorPrimary"
+                app:sv_selectedCircleRadius="@dimen/dp8h"
+                app:sv_selectedStepNumberColor="@color/colorPrimary"
+                app:sv_selectedTextColor="@color/colorPrimary"
+                app:sv_stepLineWidth="@dimen/dp6w"
+                app:sv_stepPadding="@dimen/dp4h"
+                app:sv_stepViewStyle="@style/Base.TextAppearance.AppCompat.Small.Inverse"
+                app:sv_steps="@array/steps"
+                app:sv_textSize="@dimen/sp11" />
+
+            <RelativeLayout
+                android:id="@+id/relTotal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="@color/colorAccent">
+
+                <TextView
+                    android:id="@+id/totalTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp50h"
+                    android:layout_alignParentStart="true"
+                    android:gravity="center_vertical|start"
+                    android:padding="@dimen/dp4h"
+                    android:text="@string/order_total_text"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp50h"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="@dimen/dp8w"
+                    android:gravity="start|center_vertical"
+                    android:padding="@dimen/dp4h"
+                    android:text="200 ريال"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold"
+                    app:text="@{myOrderDetailViewModel.OrderTotal}" />
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+
+
+</layout>

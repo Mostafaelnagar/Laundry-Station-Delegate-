@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/white">
+
+    <data>
+
+        <variable
+            name="orderItemViewModel"
+            type="app.laundrydelegate.viewModels.OrdersItemViewModels" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp8h"
+        android:onClick="@{() -> orderItemViewModel.performClickAction(orderItemViewModel.getOrderDetail())}"
+        app:cardBackgroundColor="@color/colorAccent"
+        app:cardCornerRadius="@dimen/dp8h"
+        app:cardElevation="@dimen/dp4h">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp8h"
+                    android:layout_weight="2"
+                    android:gravity="end"
+                    android:text="80 ريال"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold"
+                    app:text="@{orderItemViewModel.OrderTotal}" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp8h"
+                    android:layout_weight="2"
+                    android:gravity="center_horizontal"
+                    android:maxLines="1"
+                    android:text="المغسله"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold"
+                    app:text="@{orderItemViewModel.LaundryName}" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp8h"
+                    android:layout_weight="2"
+                    android:gravity="start"
+                    android:text="21/12/2019 "
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold"
+                    app:text="@{orderItemViewModel.OrderDate}" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp8h"
+                    android:layout_weight="2"
+                    android:gravity="center_horizontal"
+                    android:text="المغسله"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold"
+                    app:text="@{orderItemViewModel.OrderNumber}" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

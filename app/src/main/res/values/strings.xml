@@ -1,0 +1,91 @@
+<resources>
+    <string name="app_name">LaundryDelegated</string>
+    <!--Auth Acivity-->
+    <!--Sign In-->
+    <string name="tab_text_login">Login</string>
+    <string name="tab_text_register">Create account</string>
+    <string name="sign_in_phone_number">Phone</string>
+    <string name="delegatedLicense">license number</string>
+    <string name="sign_in_password">Password</string>
+    <string name="sign_in_forget">Forget Password ?</string>
+    <string name="btn_sign_in_text">Login</string>
+    <string name="btn_sign_in_face_text">Facebook</string>
+    <string name="signup_validation_type">Sign_UP</string>
+    <string name="titleResetPassword">Change password</string>
+    <string name="connection_vaild_msg">Connected</string>
+    <string name="connection_invaild_msg">No Connection </string>
+    <string name="auth_empty_warring">Please Fill all data</string>
+
+    <string name="btn_sendCode_text">Send code</string>
+    <string name="btn_confirm_text">Confirm</string>
+    <string name="btn_saveCode_text">Save</string>
+    <string name="sign_in_new_password">New password</string>
+    <string name="sign_in_ConfirmPassword">Confirm password</string>
+    <string name="titleHome">Home</string>
+    <string name="titleOrderDetail">Order detail</string>
+    <string name="titleLaundryDetail">Laundry detail</string>
+    <string name="orderAcceptText">Accept</string>
+
+    <string name="txt_notfications">Notifications</string>
+    <string name="menu_profile">profile</string>
+    <string name="menu_my_orders">My orders</string>
+    <string name="menu_join_request">Join request</string>
+    <string name="menu_contacts_us">Contact Us</string>
+    <string name="menu_rating">Rate Us</string>
+    <string name="menu_share_app">Share</string>
+    <string name="menu_App_Terms">Terms and Condition</string>
+    <string name="menu_sign_out">Log out</string>
+    <string name="order_title">My orders</string>
+    <string name="order_chat_request">Client Chat</string>
+    <string name="order_total_text">Total</string>
+    <string name="order_detail_title">Order detail</string>
+    <string name="title_profile">Profile</string>
+    <string name="profileForgetPassword">Change password</string>
+    <string name="sign_up_username">User name</string>
+    <string name="sign_up_email">Email</string>
+    <string name="profileOldPassword">Old password</string>
+    <string name="about_title">About Us</string>
+    <string name="terms_title">Terms and Condition</string>
+    <string name="logOut">Are you want to exit ?</string>
+    <string name="logOutAccept">Yes</string>
+    <string name="logOutReject">No</string>
+    <string name="contactForum">Complain ......</string>
+    <string name="sendForum">Send</string>
+    <string name="contactForumTitle">Subject</string>
+    <string name="changeOrderStatus">Order Status</string>
+    <string name="cancelOrderReason">Cancelation reason</string>
+    <string name="waring_negative">Cancel</string>
+    <string name="menuAbout">About Us</string>
+    <string name="emptyOrders">There is no orders now</string>
+    <string name="terms">
+    تمتثل لكافة القوانين واللوائح المعمول بها,
+        تقدم معلومات صحيحة ودقيقة  وتقوم بتحديثها بشكل دوري,
+        سوف تستخدم الخدمة لأغراض مشروعة فقط، ولن تستخدم الخدمات لإرسال أو تخزين أي مواد غير قانونية أو بهدف الاحتيال,
+        لن تستخدم الخدمة للتسبب بإيذاء أو مضايقة أو إزعاج أحد م,
+        لن تحاول إلحاق الضرر بالخدمة بأي شكل من الأشكال,
+        لن تنسخ أو توزع النظام أو المحتويات الأخرى دون الحصول على إذن كتابي,
+        سوف تحافظ على كلمة المرور لحسابك أو أي وسيلة تعريف نقدمها لك وتتيح الدخول إلى حسابك، بشكلٍ آمن وسري,
+        سوف تقدم لنا كافة الدلائل التي تثبت هويتك وفقاً لتقدير مغسلتي الخاص,
+        يحق لمغسلتي رفض تقديم الخدمة أو استخدام النظام دون إبداء أسباب
+    </string>
+    <string name="about_Desc">عندما نتحدث عن مشروع مغسلة ملابس فهذا يعني اننا نتحدث عن واحد من اكثر المشاريع الصغيرة شهرة وانتشارًا، فمغاسل الملابس منتشرة في كافة الانحاء، وبالحديث عن الاسباب التي ادت الى انتشار هذا المشروع بهذا الشكل الكبير فسنجد انها عديدة، ومنها،،  حاجة السوق الى المشروع بصفته يقدم خدمات ضرورية لشريحة كبيرة من العملاء. اسعار الخدمات في متناول الجميع وربما القيمة التي يحصل عليها العملاء تقدر بأكثر مما يدفعونه من اموال. مشروع يساعد الناس على ان يكونوا اكثر راحة. المشروع سهل التنفيذ، فهو من المشاريع التي تقدم خدمات محدودة يمكن للجميع القيام بها. المشروع سهل الادارة، فعدد العمالة محدود للغاية والمهام التي يتم تنفيذها محدودة ايضًا. مشروع مغلسة ملابس من المشاريع التي تحقق عوائد ربحية ممتازة، فهو يعتمد على تقديم الخدمات بأسعار قليلة لشريحة كبيرة من العملاء. وبناء على ما سبق فإن مشروع مغلسة ملابس يعد من المشاريع المجدية التي ننصح بتنفيذها، ولكن بشروط محددة لضمان النجاح، هذه الشروط نعرضها فيما يلي بالاضافة الى توضيح المتطلبات اللازمة لتنفيذ المشروع.</string>
+    <string name="exitText">Are you want to exit ?</string>ßßßß
+    <string name="chat_title">Chat</string>
+    <string name="contact_title">Contact Us</string>
+    <string name="chatHint">Write message.....</string>
+    <string name="channel_name">deleName</string>
+    <string name="channel_description">delegateCh</string>
+    <string name="languageChangeText">Language</string>
+    <string name="arabicLanguage">Arabic</string>
+    <string name="englishLanguage">English</string>
+    <string name="garndTitle">تصميم وبرمجة</string>
+    <string name="grandName">GRAND</string>
+    <string name="grandSite">www.2Grand.net</string>
+    <string name="grandPhone">00201157771069</string>
+    <string name="grandWhatsApp">واتساب</string>
+    <string name="grandCall">اتصال</string>
+    <string name="coin">" "Riyal " "</string>
+    <string name="cat_wash">Wash</string>
+    <string name="cat_ironing">Ironing</string>
+    <string name="cat_wash_ironing">Wash and Ironing</string>
+</resources>

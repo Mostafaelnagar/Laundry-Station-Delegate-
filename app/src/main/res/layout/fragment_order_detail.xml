@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@android:color/white">
+
+    <data>
+
+        <variable
+            name="orderDetailViewModel"
+            type="app.laundrydelegate.viewModels.OrderDetailViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:gravity="start"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp8h"
+                android:onClick="@{() -> orderDetailViewModel.back()}"
+                android:padding="@dimen/dp8h"
+                android:src="@drawable/ic_back" />
+
+            <TextView
+                android:id="@+id/txt_Laundry_Cat_Name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_margin="@dimen/dp8h"
+                android:padding="@dimen/dp4h"
+                android:text="@string/titleOrderDetail"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@android:color/black"
+                  />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_Laundry_Cat_Name"
+                app:cardCornerRadius="@dimen/dp8h">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/userProfileImgae"
+                        android:layout_width="@dimen/dp50w"
+                        android:layout_height="@dimen/dp50h"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="@dimen/dp8h"
+                        android:src="@drawable/profile_holder" />
+
+                    <TextView
+                        android:id="@+id/txt_userName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/dp8h"
+                        android:layout_marginEnd="@dimen/dp8h"
+                        android:layout_toEndOf="@+id/userProfileImgae"
+                        android:gravity="start|center_vertical"
+                        android:padding="@dimen/dp4h"
+                         android:text="@string/app_name"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                        android:textColor="@android:color/black"
+                         app:text="@{orderDetailViewModel.ClientName}" />
+
+                    <TextView
+                        android:id="@+id/txt_userPhone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txt_userName"
+                        android:layout_margin="@dimen/dp4h"
+                        android:layout_toEndOf="@+id/userProfileImgae"
+                        android:gravity="start|center_vertical"
+                        android:padding="@dimen/dp4h"
+                        android:text="@string/app_name"
+                        android:maxLength="15"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                        android:textColor="@android:color/black"
+                         app:text="@{orderDetailViewModel.ClientPhone}" />
+
+                    <TextView
+                        android:id="@+id/txt_userAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txt_userPhone"
+                        android:layout_margin="@dimen/dp4h"
+                        android:layout_toEndOf="@+id/userProfileImgae"
+                        android:padding="@dimen/dp4h"
+                        android:text="@string/app_name"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                        android:textColor="@android:color/black"
+                         app:text="@{orderDetailViewModel.ClientAddress}" />
+
+                    <ImageView
+                        android:onClick="@{() -> orderDetailViewModel.navigateToUser()}"
+                        android:id="@+id/userLocation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txt_userName"
+                        android:layout_alignParentEnd="true"
+                         android:layout_margin="@dimen/sp8"
+                        android:src="@drawable/ic_location_placeholder" />
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp8h"
+            android:gravity="start"
+            android:padding="@dimen/dp4h"
+            android:text="@string/titleLaundryDetail"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="@android:color/black"
+            />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/dp8h">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start">
+
+                <ImageView
+                    android:id="@+id/imgLaundry"
+                    android:layout_width="@dimen/dp70w"
+                    android:layout_height="@dimen/dp70h"
+                    android:layout_alignParentStart="true"
+                    android:layout_margin="@dimen/dp8h"
+                    android:scaleType="centerCrop"
+                    app:laundryImage="@{orderDetailViewModel.laundryImage}" />
+
+                <TextView
+                    android:id="@+id/txtLaundryName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp4h"
+                    android:layout_toEndOf="@+id/imgLaundry"
+                    android:gravity="start|center_vertical"
+                    android:padding="@dimen/dp4h"
+                    android:text="@string/app_name"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@android:color/black"
+                     app:text="@{orderDetailViewModel.LaundryName}" />
+
+                <TextView
+                    android:id="@+id/txtLaundryAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtLaundryName"
+                    android:layout_margin="@dimen/dp4h"
+                    android:layout_toEndOf="@+id/imgLaundry"
+                    android:gravity="start|center_vertical"
+                    android:padding="@dimen/dp4h"
+                    android:text="@string/app_name"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@android:color/black"
+                     app:text="@{orderDetailViewModel.LaundryAddress}" />
+
+                <ImageView
+                    android:onClick="@{() -> orderDetailViewModel.navigateToLaundry()}"
+                    android:id="@+id/laundryLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                     android:layout_margin="@dimen/sp8"
+                    android:src="@drawable/ic_location_placeholder" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recOrderDetail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/orderAccept"
+                app:orderDetail="@{orderDetailViewModel.orderDetail}"
+                app:orderDetailAdapter="@{orderDetailViewModel.orderDetailAdapter}"
+                tools:listitem="@layout/order_detail_item" />
+
+            <Button
+                android:id="@+id/orderAccept"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="@dimen/dp16h"
+                android:layout_marginEnd="@dimen/dp32h"
+                android:layout_marginStart="@dimen/dp32h"
+                android:layout_marginTop="@dimen/dp16h"
+                android:background="@color/colorAccent"
+                android:onClick="@{() -> orderDetailViewModel.acceptOrder()}"
+                android:text="@string/orderAcceptText"
+                android:textAllCaps="false"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/sp16" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</layout>
